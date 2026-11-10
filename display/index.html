@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Antrian Bank BBJ</title>
+    <link rel="stylesheet" href="css/display.css">
+</head>
+<body>
+<div class="display-wrapper">
+
+    <!--HEADER-->
+    <header class="header">
+        <div class="brand" >
+            <p id="namaCabang">BANK BBJ</p>
+        </div>
+        <div class="header-right">
+            <button type="button" id="btnSound" class="sound-button">🔊 SUARA AKTIF</button>
+            <div class="clock-area">
+                <div id="tanggal">-</div>
+                <div id="jam">00:00:00</div>
+            </div>
+        </div>
+    </header>
+
+    <!--MAIN-->
+    <main class="main-content">
+        <!--NOMOR ANTRIAN-->
+        <section class="queue-panel">
+            <div class="queue-label">NOMOR ANTRIAN</div>
+            <div class="queue-number" id="nomorAntrian">---</div>
+            <div class="queue-service" id="layanan">MENUNGGU PANGGILAN</div>
+            <div class="counter" id="loket">-</div>
+            <div class="queue-message">
+                Silakan menuju loket pelayanan
+            </div>
+        </section>
+
+        <!--VIDEO-->
+        <section class="video-panel">
+            <video id="videoPlayer" autoplay playsinline>
+                <source src="videos/video-1.mp4" type="video/mp4">
+            </video>
+        </section>
+    </main>
+
+    <!--RIWAYAT-->
+    <section class="history-area">
+        <div class="history-title">
+            PANGGILAN TERAKHIR
+        </div>
+        <div class="history-list" id="historyList">
+            <div class="history-item">
+                Menunggu panggilan...
+            </div>
+        </div>
+    </section>
+
+    <!--FOOTER-->
+    <footer class="footer">
+        <div class="ticker">
+            BANK BBJ • Sahabat Keuangan Anda •
+            Amanah • Kuat • Peduli
+        </div>
+    </footer>
+</div>
+<script src="js/audio.js"></script>
+<script src="js/display.js"></script>
+</body>
+</html>

@@ -1,0 +1,444 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        #eef3f8;
+
+    color:
+        #15324d;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =============================================
+   APP
+============================================= */
+
+.app {
+    min-height: 100vh;
+}
+
+
+/* =============================================
+   HEADER
+============================================= */
+
+.header {
+    min-height: 100px;
+
+    padding:
+        20px 35px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    background:
+        linear-gradient(
+            135deg,
+            #073d6b,
+            #0874ae
+        );
+
+    color:
+        white;
+}
+
+.header h1 {
+    font-size:
+        28px;
+}
+
+.header p {
+    margin-top:
+        4px;
+
+    opacity:
+        .8;
+
+    font-size:
+        13px;
+}
+
+.clock {
+    font-size:
+        27px;
+
+    font-weight:
+        700;
+}
+.panel-user {
+    font-size: 17px;
+    text-align: right;
+}
+
+.panel-user a {
+    color: inherit;
+    font-weight: 700;
+}
+
+/* =============================================
+   PANEL
+============================================= */
+
+.panel {
+    width:
+        min(700px, 92%);
+
+    margin:
+        35px auto;
+}
+
+
+/* =============================================
+   PANEL HEAD
+============================================= */
+
+.panel-head {
+    margin-bottom:
+        20px;
+
+    text-align:
+        center;
+}
+
+.panel-head span {
+    display:
+        block;
+
+    margin-bottom:
+        6px;
+
+    font-size:
+        12px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        2px;
+
+    color:
+        #708090;
+}
+
+.panel-head h2 {
+    font-size:
+        27px;
+}
+
+.loket {
+    display:
+        inline-block;
+
+    margin-top:
+        10px;
+
+    padding:
+        8px 20px;
+
+    border-radius:
+        30px;
+
+    background:
+        #dbeaf5;
+
+    color:
+        #075c91;
+
+    font-weight:
+        700;
+}
+
+
+/* =============================================
+   CURRENT
+============================================= */
+
+.current-card {
+    padding:
+        32px;
+
+    text-align:
+        center;
+
+    background:
+        white;
+
+    border-radius:
+        18px;
+
+    box-shadow:
+        0 12px 35px
+        rgba(0,0,0,.08);
+}
+
+.current-label {
+    font-size:
+        12px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        2px;
+
+    color:
+        #8392a1;
+}
+
+.current-number {
+    margin:
+        12px 0 4px;
+
+    font-size:
+        clamp(
+            65px,
+            12vw,
+            105px
+        );
+
+    line-height:
+        1;
+
+    font-weight:
+        900;
+
+    color:
+        #073d6b;
+}
+
+.current-service {
+    font-size:
+        17px;
+
+    font-weight:
+        700;
+
+    color:
+        #526577;
+}
+
+
+/* =============================================
+   WAITING
+============================================= */
+
+.waiting-card {
+    margin-top:
+        18px;
+
+    padding:
+        18px 25px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    border-radius:
+        14px;
+
+    background:
+        #dfeaf2;
+}
+
+.waiting-card span {
+    font-size:
+        13px;
+
+    font-weight:
+        700;
+}
+
+.waiting-card strong {
+    font-size:
+        30px;
+
+    color:
+        #0871aa;
+}
+
+
+/* =============================================
+   BUTTONS
+============================================= */
+
+.actions {
+    margin-top:
+        20px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
+    gap:
+        12px;
+}
+
+.btn {
+    min-height:
+        64px;
+
+    padding:
+        15px;
+
+    border:
+        none;
+
+    border-radius:
+        13px;
+
+    cursor:
+        pointer;
+
+    font-weight:
+        800;
+
+    transition:
+        .2s ease;
+}
+
+.btn:hover:not(:disabled) {
+    transform:
+        translateY(-2px);
+}
+
+.btn-primary {
+    background:
+        #086ea5;
+
+    color:
+        white;
+}
+
+.btn-secondary {
+    background:
+        #f0a928;
+
+    color:
+        #222;
+}
+
+.btn-success {
+    background:
+        #218a5b;
+
+    color:
+        white;
+}
+
+.btn:disabled {
+    cursor:
+        not-allowed;
+
+    opacity:
+        .4;
+}
+
+/* =============================================
+   MESSAGE
+============================================= */
+
+.message {
+    min-height:
+        40px;
+
+    margin-top:
+        15px;
+
+    padding:
+        12px;
+
+    text-align:
+        center;
+
+    border-radius:
+        10px;
+
+    font-size:
+        14px;
+
+    font-weight:
+        700;
+}
+
+.message.success {
+    background:
+        #dff5e9;
+
+    color:
+        #167348;
+}
+
+.message.error {
+    background:
+        #ffe4e4;
+
+    color:
+        #a12929;
+}
+
+
+/* =============================================
+   MOBILE
+============================================= */
+
+@media (
+    max-width: 650px
+) {
+
+    .header {
+        min-height:
+            80px;
+
+        padding:
+            15px 20px;
+    }
+
+    .header h1 {
+        font-size:
+            22px;
+    }
+
+    .clock {
+        font-size:
+            19px;
+    }
+
+    .panel {
+        margin:
+            22px auto;
+    }
+
+    .actions {
+        grid-template-columns:
+            1fr;
+    }
+
+}

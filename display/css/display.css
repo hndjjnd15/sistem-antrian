@@ -1,0 +1,601 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        #071b33;
+
+    color:
+        white;
+}
+
+.queue-animation {
+
+    animation:
+        queueCall
+        0.7s ease
+        3;
+
+}
+
+
+@keyframes queueCall {
+
+    0% {
+
+        transform:
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.15);
+
+    }
+
+    100% {
+
+        transform:
+            scale(1);
+
+    }
+
+}
+/* ===============================================
+   DISPLAY
+================================================ */
+
+.display-wrapper {
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+/* ===============================================
+   HEADER
+================================================ */
+
+.header {
+
+    height: 13vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding:
+        0 3vw;
+
+    background:
+        linear-gradient(
+            90deg,
+            #09345f,
+            #08639d
+        );
+
+    border-bottom:
+        4px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.2
+        );
+
+}
+
+
+.bank-name {
+
+    font-size:
+        2.3vw;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+.branch {
+
+    margin-top:
+        5px;
+
+    font-size:
+        1vw;
+
+    opacity:
+        0.8;
+
+}
+
+
+.clock-area {
+
+    text-align:
+        right;
+
+}
+
+
+#tanggal {
+
+    font-size:
+        1vw;
+
+    opacity:
+        0.8;
+
+}
+
+
+#jam {
+
+    margin-top:
+        3px;
+
+    font-size:
+        2vw;
+
+    font-weight:
+        bold;
+
+}
+
+
+
+/* ===============================================
+   MAIN
+================================================ */
+
+.main-content {
+
+    height:
+        63vh;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        34% 66%;
+
+}
+
+
+/* ===============================================
+   QUEUE
+================================================ */
+
+.queue-panel {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    padding:
+        2vw;
+
+    background:
+
+        radial-gradient(
+            circle at top,
+            #114a7d,
+            #071d35
+        );
+
+}
+
+
+.queue-label {
+
+    font-size:
+        1.4vw;
+
+    letter-spacing:
+        2px;
+
+    opacity:
+        0.75;
+
+}
+
+
+.queue-number {
+
+    margin:
+        1vh 0;
+
+    font-size:
+        7.7vw;
+
+    line-height:
+        1;
+
+    font-weight:
+        900;
+
+}
+
+
+.queue-service {
+
+    font-size:
+        1.6vw;
+
+    font-weight:
+        700;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.counter {
+
+    margin-top:
+        2vh;
+
+    padding:
+        0.8vh 2vw;
+
+    border-radius:
+        50px;
+
+    font-size:
+        2vw;
+
+    font-weight:
+        700;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.15
+        );
+
+}
+
+
+.queue-message {
+
+    margin-top:
+        2vh;
+
+    font-size:
+        1vw;
+
+    opacity:
+        0.75;
+
+}
+
+
+
+/* ===============================================
+   VIDEO
+================================================ */
+
+.video-panel {
+
+    background:
+        black;
+
+    overflow:
+        hidden;
+
+}
+
+
+.video-panel video {
+
+    display:
+        block;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        contain;
+
+    background:
+        black;
+
+}
+
+
+
+/* ===============================================
+   HISTORY
+================================================ */
+
+.history-area {
+
+    height:
+        16vh;
+
+    padding:
+        1.3vh 2vw;
+
+    background:
+        #f5f7fa;
+
+    color:
+        #13263c;
+
+}
+
+
+.history-title {
+
+    margin-bottom:
+        1vh;
+
+    font-size:
+        0.9vw;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+.history-list {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            5,
+            1fr
+        );
+
+    gap:
+        1vw;
+
+}
+
+
+.history-item {
+
+    padding:
+        1.2vh 1vw;
+
+    background:
+        white;
+
+    border-radius:
+        8px;
+
+    text-align:
+        center;
+
+    box-shadow:
+        0 3px 10px
+        rgba(
+            0,
+            0,
+            0,
+            0.08
+        );
+
+}
+
+
+.history-number {
+
+    font-size:
+        1.5vw;
+
+    font-weight:
+        800;
+
+}
+
+
+.history-counter {
+
+    margin-top:
+        4px;
+
+    font-size:
+        0.8vw;
+
+    opacity:
+        0.65;
+
+}
+
+
+
+/* ===============================================
+   FOOTER
+================================================ */
+
+.footer {
+
+    height:
+        8vh;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    overflow:
+        hidden;
+
+    background:
+        #08639d;
+
+}
+
+
+.ticker {
+
+    white-space:
+        nowrap;
+
+    font-size:
+        1.15vw;
+
+    font-weight:
+        600;
+
+    animation:
+        ticker 25s linear infinite;
+
+}
+
+
+@keyframes ticker {
+
+    from {
+
+        transform:
+            translateX(
+                100vw
+            );
+
+    }
+
+    to {
+
+        transform:
+            translateX(
+                -100%
+            );
+
+    }
+
+}
+/* ===============================================
+   HEADER RIGHT
+================================================ */
+
+.header-right {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        1.5vw;
+
+}
+
+
+/* ===============================================
+   SOUND BUTTON
+================================================ */
+
+.sound-button {
+
+    padding:
+        0.7vh 1vw;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.25
+        );
+
+    border-radius:
+        30px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.12
+        );
+
+    color:
+        white;
+
+    font-size:
+        0.75vw;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+}
+
+
+.sound-button:hover {
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.2
+        );
+
+}
+
+
+.sound-button.off {
+
+    opacity:
+        0.5;
+
+}

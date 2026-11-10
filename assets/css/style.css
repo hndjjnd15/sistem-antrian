@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    min-height: 100vh;
+}
+
+.antrian-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 50px 30px;
+}
+
+/* HEADER */
+
+.header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.header h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.header p {
+    color: #666;
+    font-size: 17px;
+}
+
+
+/* LAYANAN */
+
+.layanan-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.layanan-card {
+    display: block;
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 35px 25px;
+    text-align: center;
+    text-decoration: none;
+    color: #222;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+    transition: 0.2s;
+}
+
+.layanan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.layanan-kode {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.layanan-nama {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.layanan-pilih {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 8px;
+    background: #222;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+
+    .antrian-container {
+        padding: 30px 20px;
+    }
+
+    .layanan-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+}

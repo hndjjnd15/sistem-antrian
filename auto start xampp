@@ -1,0 +1,25 @@
+Auto start XAMPP
+
+Di PC server:
+
+XAMPP Control Panel
+
+aktifkan service:
+
+Apache → Service
+MySQL  → Service
+
+Sehingga keduanya berjalan saat Windows hidup.
+
+Targetnya:
+
+PC Server ON
+     ↓
+Windows masuk
+     ↓
+Apache otomatis aktif
+MySQL otomatis aktif
+     ↓
+Sistem antrian siap
+
+Petugas tidak perlu menekan Start Apache/MySQL setiap pagi.

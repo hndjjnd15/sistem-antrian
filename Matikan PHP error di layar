@@ -1,0 +1,19 @@
+Untuk server operasional, edit:
+
+C:\xampp\php\php.ini
+
+Cari:
+
+display_errors=On
+
+ubah:
+
+display_errors=Off
+
+Pastikan:
+
+log_errors=On
+
+Kemudian restart Apache.
+
+Jadi error tetap tercatat tetapi tidak muncul sebagai pesan teknis di TV, tablet, atau panel teller.

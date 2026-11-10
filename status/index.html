@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status Sistem Antrian</title>
+
+    <style>
+        *{box-sizing:border-box}
+        body{
+            margin:0;
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-family:Arial,sans-serif;
+            background:#eef3f7;
+        }
+        .card{
+            width:min(420px,90%);
+            padding:30px;
+            background:#fff;
+            border-radius:16px;
+            box-shadow:0 8px 30px rgba(0,0,0,.08);
+            text-align:center;
+        }
+        h1{margin:0 0 8px;color:#073d6b}
+        p{color:#71808d}
+        .status{
+            margin:25px 0;
+            padding:16px;
+            border-radius:10px;
+            font-size:20px;
+            font-weight:bold;
+        }
+        .online{background:#dff5e8;color:#18764a}
+        .offline{background:#fde4e4;color:#b32424}
+        small{color:#8b989f}
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>BANK BBJ</h1>
+    <p>Sistem Antrian KC Parungpanjang</p>
+
+    <div id="status" class="status">
+        Mengecek...
+    </div>
+
+    <small id="time">-</small>
+</div>
+
+<script>
+async function checkServer(){
+    const status=document.getElementById("status");
+    const time=document.getElementById("time");
+
+    try{
+        const response=await fetch(
+            "../api/test.php?t="+Date.now(),
+            {cache:"no-store"}
+        );
+
+        const result=await response.json();
+
+        if(result.success){
+            status.className="status online";
+            status.textContent="SISTEM ONLINE";
+            time.textContent="Terakhir dicek: "+result.time;
+        }else{
+            throw new Error();
+        }
+    }catch(error){
+        status.className="status offline";
+        status.textContent="SISTEM OFFLINE";
+        time.textContent="Periksa server atau database";
+    }
+}
+
+checkServer();
+setInterval(checkServer,5000);
+</script>
+
+</body>
+</html>
