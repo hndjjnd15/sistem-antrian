@@ -19,9 +19,10 @@ try {
     $pdo->beginTransaction();
 
     $stmt = $pdo->prepare("
-        SELECT p.id,p.antrian_id,p.nomor_antrian,p.status,p.layanan_id
+        SELECT p.id,p.antrian_id,p.nomor_antrian,p.status,l.id AS layanan_id
         FROM panggilan p
         INNER JOIN antrian a ON a.id=p.antrian_id
+        INNER JOIN layanan l ON l.kode=a.kode_layanan
         WHERE p.id=? AND a.cabang_id=? AND a.tanggal=CURDATE()
         LIMIT 1 FOR UPDATE
     ");
@@ -32,6 +33,8 @@ try {
         $pdo->rollBack();
         apiJsonError(404, 'Panggilan tidak ditemukan.');
     }
+    requirePanelAccess($cabangId, (int) $panggilan['layanan_id']);
+
     if ($panggilan['status'] !== 'dipanggil') {
         $pdo->rollBack();
         apiJsonError(409, 'Nomor sudah selesai atau tidak aktif.');
