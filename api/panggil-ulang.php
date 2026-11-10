@@ -18,9 +18,10 @@ try {
     requirePanelAccess($cabangId);
 
     $stmt = $pdo->prepare("
-        SELECT p.id,p.nomor_antrian,p.layanan,p.loket,p.status
+        SELECT p.id,p.nomor_antrian,p.layanan,p.loket,p.status,l.id AS layanan_id
         FROM panggilan p
         INNER JOIN antrian a ON a.id=p.antrian_id
+        INNER JOIN layanan l ON l.kode=a.kode_layanan
         WHERE p.id=? AND a.cabang_id=? AND a.tanggal=CURDATE()
         LIMIT 1
     ");
@@ -30,6 +31,8 @@ try {
     if (!$panggilan) {
         apiJsonError(404, 'Data panggilan tidak ditemukan.');
     }
+    requirePanelAccess($cabangId, (int) $panggilan['layanan_id']);
+
     if ($panggilan['status'] !== 'dipanggil') {
         apiJsonError(409, 'Nomor sudah selesai.');
     }
